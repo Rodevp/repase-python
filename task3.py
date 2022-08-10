@@ -9,3 +9,11 @@ fav_movies = {
     'title': 'Django',
     'author': 'Tarantino'
 }
+
+##task
+weigth = int( input('Escribe tu peso: ') )
+heigth = int( input('Escribe tu altura (metros): ') )
+
+calc = weigth / heigth
+
+print('tu indice de masa corporal es: ', calc)
