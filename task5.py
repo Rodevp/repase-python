@@ -15,4 +15,12 @@ def is_counsin(n) :
     if n % 2 == 1 or n == 2:
         print('counsin')
 
+
+def leap_year(year) :
+
+    if not year % 100 == 0 or year % 400 == 0 or year % 4 == 0 :
+        print('leap_year')
+
+
+
     
