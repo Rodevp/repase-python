@@ -43,3 +43,101 @@ class Static :
 
 
 Static.static_method()
+
+#herencia
+"""
+    es cuando queremos reutilizar caracteristicas de un objeto y reutilizarlo.
+"""
+
+class Juguete :
+    encendido = False
+
+
+    def encender(self) :
+        self.encendido = True
+
+    def apagar(self) :
+        self.encendido = False
+
+
+
+class DinoTwo(Juguete) :
+
+    modelo_dino = 'xyz'
+
+#ahora dino tiene los metodos y propiedades de un juguete.
+
+d =  DinoTwo()
+#caracteristicas de su padre
+d.apagar()
+d.encender()
+print(d.encendido)
+#caracteristicas propias
+print(d.modelo_dino)
+
+#contructor
+"""
+    - Es la primera funcion en ejecutarce cuando se instancia la clase
+"""
+
+class X:
+
+    def __init__(self):
+        print('primera funcion en ejecutarce')
+
+#pasar parametros
+class Y :
+
+    def __init__(self, valor_y):
+        self.y = valor_y
+
+
+x = X()
+y = Y(22)
+
+#podemos ejecutar el constructor de la clase padre
+
+class Z(Y) :
+
+    def __init__(self, valor_z, valor_y):
+        super().__init__(valor_y)
+        self.z = valor_z
+
+#clases abstracta
+
+"""
+    - nos sirven para funcionalidad a muchos objetos que hereden de el.
+    - obligamos a que ese objeto tenga ese metodo y propiedad y con ello
+      lograr polimorfismo (muchas formas de un objeto) el cual puede tener un
+      mismo comportamiento con el mismo nombre y actuar de muchas formas según
+      que objeto
+"""
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC) :
+
+    @abstractmethod
+    def sonido(self, s) :
+        pass
+
+
+class Pato(Animal) :
+    
+    def sonido(self, s):
+        print(s)
+
+
+class Perro(Animal) :
+
+    def sonido(self, s):
+        print(s)
+
+
+#muchas formas para un mismo comportamiento
+
+p = Pato()
+p.sonido('cuak!')
+
+pe = Perro()
+p.sonido('wof!')
