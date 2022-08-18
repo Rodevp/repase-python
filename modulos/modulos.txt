@@ -1,0 +1,4 @@
+son para encapsular logica y compartirla bajo un mismo ambito
+los modulos contienen funciones, variables y clases que pueden ser compartidas
+
+un paquete de python es un conjunto de modulos
